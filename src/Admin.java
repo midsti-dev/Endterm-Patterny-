@@ -1,12 +1,23 @@
-class Admin {
-    private static Admin instance;
+import java.util.Scanner;
 
-    private Admin() {
-        // Приватный конструктор
+class Admin {
+    private static Scanner sc = new Scanner(System.in);
+    private static Admin instance;
+    private static final String log = "admin", pass = "admin";
+    private Admin(){
+        
     }
 
-    public static Admin getInstance() {
+    private static void authenticate() throws AdminAuthenticationException {
+        String login = sc.nextLine();
+        String password = sc.nextLine();
+        if (!log.equals(login) || !pass.equals(password)) {
+            throw new AdminAuthenticationException("Неверный логин или пароль!");
+        }
+    }
+    public static Admin getInstance() throws AdminAuthenticationException {
         if (instance == null) {
+            authenticate();  // Проверка логина и пароля
             instance = new Admin();
         }
         return instance;
@@ -14,5 +25,11 @@ class Admin {
 
     public void manageMenu() {
         System.out.println("Управление меню администратора");
+    }
+}
+
+class AdminAuthenticationException extends Exception{
+    public AdminAuthenticationException(String mes){
+        super(mes);
     }
 }
