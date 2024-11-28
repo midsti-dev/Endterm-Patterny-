@@ -3,4 +3,5 @@ public class Pizzabase {
     int b;
     int c;
     int d;
+    int sd;
 }
