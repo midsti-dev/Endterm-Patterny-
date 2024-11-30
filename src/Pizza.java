@@ -155,4 +155,5 @@ class PizzaFactory {
             throw new IllegalArgumentException("Неизвестный тип пиццы");
         }
     }
+
 }
