@@ -14,11 +14,11 @@ class Order {
     }
 
     public void showOrder() {
-        System.out.println("Заказ включает:");
+        System.out.println("РІР°С€ Р·Р°РєР°Р·:");
         for (Pizza pizza : pizzas) {
             pizza.prepare();
         }
-        System.out.println("Тип доставки: " + deliveryType);
+        System.out.println("С‚РёРї РґРѕСЃС‚Р°РІРєРё: " + deliveryType);
     }
 }
 
